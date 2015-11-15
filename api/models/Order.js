@@ -8,7 +8,32 @@
 module.exports = {
 
   attributes: {
+    id_order: {
+      type: 'integer',
+      primaryKey: true,
+      autoIncrement: true
+    },
+    user: {
+      model: 'user'
+    },
+    type: {
+      model: 'type'
+    },
+    content: {
+      type: 'string',
+      maxLength: 255
+    },
+    messages:{
+      collection: 'message',
+      via: 'order'
+    },
+    create_time: {
+      type: 'datetime',
+      defaultsTo: function (){ return new Date(); }
+    },
+    complete_time: {
+      type: 'datetime'
+    }
 
   }
 };
-
