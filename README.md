@@ -10,8 +10,12 @@
 npm -g install sails
 ```
 
-Новий проект створюється командрою
+Новий проект створюється командою
 
 ```
 sails new wtwd-sails
 ```
+
+## 2 Створіть модель бази даних
+
+Для створення моделі скористайтесь програмою [MySQL Workbench] (http://dev.mysql.com/downloads/workbench/).
