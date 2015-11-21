@@ -7,6 +7,8 @@
 
 module.exports = {
 
+  schema: true,
+
   attributes: {
     id_user: {
       type: 'integer',
