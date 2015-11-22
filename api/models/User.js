@@ -64,6 +64,12 @@ module.exports = {
     create_time: {
       type: 'datetime',
       defaultsTo: function (){ return new Date(); }
+    },
+    //Приховаємо пароль з виводу
+    toJSON: function() {
+      var obj = this.toObject();
+      delete obj.password;
+      return obj;
     }
   }
 };

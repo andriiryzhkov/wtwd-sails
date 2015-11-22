@@ -27,6 +27,29 @@ module.exports.policies = {
   ***************************************************************************/
 
   // '*': true,
+  UserController: {
+    '*': 'isManager',
+    'create': true,
+    'find': 'isClient',
+    'findOne': 'isClient',
+    'update': 'isClient'
+  },
+  OrderController: {
+    '*': 'isManager',
+    'create': 'isClient',
+    'find': 'isClient',
+    'findOne': 'isClient',
+    'update': 'isClient'
+  },
+  MessageController: {
+    '*': 'isManager',
+    'create': 'isClient'
+  },
+  TypeController: {
+    '*': 'isManager',
+    'find': 'isClient',
+    'findOne': 'isClient'
+  }
 
   /***************************************************************************
   *                                                                          *

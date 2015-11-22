@@ -34,7 +34,7 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -45,5 +45,25 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+
+  'get /login': {
+    controller: 'user',
+    action: 'login'
+  },
+  'post /login': {
+    controller: 'user',
+    action: 'passport_local'
+  },
+  'get /logout': {
+    controller: 'user',
+    action: 'logout'
+  },
+  'get /register': {
+    view: 'user/register'
+  },
+  'post /register': {
+    controller: 'user',
+    action: 'register'
+  }
 
 };
