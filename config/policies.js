@@ -29,6 +29,10 @@ module.exports.policies = {
   // '*': true,
   UserController: {
     '*': 'isManager',
+    'login': true,
+    'passport_local': true,
+    'logout': true,
+    'register': true,
     'create': true,
     'find': 'isClient',
     'findOne': 'isClient',
