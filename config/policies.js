@@ -37,7 +37,7 @@ module.exports.policies = {
   OrderController: {
     '*': 'isManager',
     'create': 'isClient',
-    'find': 'isClient',
+    'findUser': 'isClient',
     'findOne': 'isClient',
     'update': 'isClient'
   },
