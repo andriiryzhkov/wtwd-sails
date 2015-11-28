@@ -26,6 +26,26 @@ module.exports.http = {
     passportInit    : require('passport').initialize(),
     passportSession : require('passport').session(),
 
+    // Визначення типу поточного користувача (підлаштовує меню)
+    manage: function (req, res, next) {
+      if (res.locals.manage) {
+        next();
+      } else if (req.isAuthenticated()) {
+        User.findOne({id_user: req.session.passport.user}).exec(function(err, found){
+          if (err || !found.manager) {
+            res.locals.manage = 0;
+            next();
+          } else {
+            res.locals.manage = 1;
+            next();
+          }
+        });
+      } else {
+        res.locals.manage = -1;
+        next();
+      }
+    },
+
   /***************************************************************************
   *                                                                          *
   * The order in which middleware should be run for HTTP request. (the Sails *
@@ -38,7 +58,8 @@ module.exports.http = {
       'cookieParser',
       'session',
       'passportInit',
-      'passportSession', 
+      'passportSession',
+      'manage',
       'myRequestLogger',
       'bodyParser',
       'handleBodyParserError',

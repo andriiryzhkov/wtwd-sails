@@ -40,6 +40,7 @@ module.exports = function(req, res, next) {
 
 
   } else if (req.isAuthenticated()) {
+    res.locals.manage = 0;
     return next();
   } else {
     // User is not allowed

@@ -44,6 +44,7 @@ module.exports = function(req, res, next) {
       if (err || !found.manager) {
         return res.forbidden();
       } else {
+        res.locals.manage = 1;
         return next();
       }
     });

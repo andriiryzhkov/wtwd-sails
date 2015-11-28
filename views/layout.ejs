@@ -30,8 +30,20 @@
 
         <!-- Всі посилання головного меню -->
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Вхід</a></li>
+          <ul class="nav navbar-nav navbar-right" id="menu">
+            <% if (manage == 0) { %>
+              <li><a href="/client/add">Додати заявку</a></li>
+              <li><a href="/client/order">Мої заявки</a></li>
+              <li><a href="/client/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Профіль</a></li>
+              <li><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Вихід</a></li>
+            <% } else if (manage == 1) { %>
+              <li><a href="/manager/user">Користувачі</a></li>
+              <li><a href="/manager/order">Заявки</a></li>
+              <li><a href="/manager/type">Типи послуг</a></li>
+              <li><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Вихід</a></li>
+            <% } else { %>
+              <li><a href="/login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Вхід</a></li>
+            <% } %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
