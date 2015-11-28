@@ -66,9 +66,14 @@ module.exports.routes = {
     action: 'register'
   },
 
+  'get /api/user/me': {
+    controller: 'user',
+    action: 'findUser'
+  },
+
   'get /api/order/me': {
     controller: 'order',
     action: 'findUser'
-  },
+  }
 
 };

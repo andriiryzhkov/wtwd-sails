@@ -34,8 +34,7 @@ module.exports.policies = {
     'logout': true,
     'register': true,
     'create': true,
-    'find': 'isClient',
-    'findOne': 'isClient',
+    'findUser': 'isClient',
     'update': 'isClient'
   },
   OrderController: {

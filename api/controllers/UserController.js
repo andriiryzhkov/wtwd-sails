@@ -42,6 +42,22 @@ module.exports = {
     res.redirect('/');
   },
 
+  // Вибір інформації про поточного користувача
+  findUser: function(req, res, next) {
+
+    id = req.session.passport.user;
+
+    if (id) {
+      User.find(id, function(err, user) {
+        if (user === undefined) return res.notFound();
+        if (err) return next(err);
+        res.json(user);
+      });
+    } else {
+      return res.badRequest('Користувач не авторизован.');
+    }
+  },
+
 
   /**
    * Overrides for the settings in `config/controllers.js`
