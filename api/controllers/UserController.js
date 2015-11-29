@@ -58,6 +58,11 @@ module.exports = {
     }
   },
 
+  // Сторінка редагування користувачів менеджером
+  manage: function(req, res) {
+    res.view('manager/user');
+  },
+
 
   /**
    * Overrides for the settings in `config/controllers.js`

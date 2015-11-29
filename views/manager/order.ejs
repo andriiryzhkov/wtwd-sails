@@ -1,0 +1,84 @@
+<div class="container">
+  <h1>Заявки</h1>
+  <button type="button" class="btn btn-primary btm-add" data-toggle="modal" data-target="#myModal" data-item="-1">Додати заявку</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Користувач</th>
+        <th>Тип</th>
+        <th>Вміст</th>
+        <th>Дата створення</th>
+        <th>Дата виконання</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody id="dataTable">
+    </tbody>
+  </table>
+</div>
+<!-- Модальне (виринаюче) вікно -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <form id="dataForm" action="#">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-8 form-group">
+              <label for="inputUser">Користувач</label>
+              <select class="form-control" id="inputUser">
+                <option value="0">Не вибрано</option>
+              </select>
+            </div>
+            <div class="col-md-4 form-group">
+              <label for="inputType">Тип послуги</label>
+              <select class="form-control" id="inputType">
+                <option value="0">Не вибрано</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <label for="inputContent">Вміст</label>
+              <textarea class="form-control" rows="3" id="inputContent"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label for="inputCreateTime">Час створення</label>
+              <p class="form-control-static" id="inputCreateTime"></p>
+            </div>
+            <div class="col-md-6 form-group">
+              <label for="inputCompleteTime">Час завершення</label>
+              <p class="form-control-static" id="inputCompleteTime"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <label for="inputMessages">Повідомлення</label>
+              <div id="inputMessages"></div>
+              <div class="row">
+                <div class="col-md-10">
+                  <textarea class="form-control" rows="2" id="inputMessageContent"></textarea>
+                </div>
+                <div class="col-md-2">
+                  <button type="button" class="btn btn-default" onclick="sendMessage()">Відправити</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="saveOrder()">Зберегти</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<% block('localScripts', '<script src="/js/custom/manager/order.js"></script>') %>

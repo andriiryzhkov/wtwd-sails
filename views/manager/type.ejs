@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Типи послуг</h1>
+  <button type="button" class="btn btn-primary btm-add" data-toggle="modal" data-target="#myModal" data-item="-1">Додати тип послуги</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Назва послуги</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody id="dataTable">
+    </tbody>
+  </table>
+</div>
+<!-- Модальне (виринаюче) вікно -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <form id="dataForm" action="#">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="inputTitle">Назва послуги</label>
+            <input type="text" class="form-control" id="inputTitle">
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="saveType()">Зберегти</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<% block('localScripts', '<script src="/js/custom/manager/type.js"></script>') %>

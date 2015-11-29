@@ -21,6 +21,12 @@ module.exports = {
     } else {
       return res.badRequest('Користувач не авторизован.');
     }
+  },
+
+  // Сторінка редагування заявок
+  manage: function(req, res) {
+    res.view('manager/order');
   }
+
 
 };

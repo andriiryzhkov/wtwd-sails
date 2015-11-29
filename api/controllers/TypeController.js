@@ -6,6 +6,10 @@
  */
 
 module.exports = {
-	
-};
 
+	// Сторінка редагування типів послуг
+	manage: function(req, res) {
+		res.view('manager/type');
+	}
+
+};

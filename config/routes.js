@@ -70,10 +70,23 @@ module.exports.routes = {
     controller: 'user',
     action: 'findUser'
   },
-
   'get /api/order/me': {
     controller: 'order',
     action: 'findUser'
-  }
+  },
+
+  'get /manager/user': {
+    controller: 'user',
+    action: 'manage'
+  },
+  'get /manager/order': {
+    controller: 'order',
+    action: 'manage'
+  },
+  'get /manager/type': {
+    controller: 'type',
+    action: 'manage'
+  },
+
 
 };
